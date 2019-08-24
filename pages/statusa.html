@@ -1,0 +1,102 @@
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Paper Less</title>
+        <!-- materialize icons, css & js -->
+        <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" href="/css/styles.css" rel="stylesheet">
+        <script type="text/javascript" src="/js/materialize.min.js"></script>
+        <link rel="manifest" href="/manifest.json">
+        <link rel="apple-touch-icon" href="/img/icons/icon-96x96.png">
+        <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+        <meta name="theme-color" content="#FFE1C4">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+        </script>
+</head>
+
+
+<body class="grey lighten-4" onload="getStatusCopy()">
+
+        <nav class="z-depth-0">
+                <div class="nav-wrapper container">
+                        <center>Application Status</center>
+                </div>
+        </nav>
+        <div class="row">
+                <table style="width:100%">
+                        <tr>
+                                <th>Application Name</th>
+                                <th>Status</th>
+                        </tr>
+                        <tr class="statusCopy">
+                        </tr>
+                </table>
+        </div>
+        <div class="row center">
+                <button href="#" class="btn orange darken-2 z-depth-0 modal-trigger"
+                        data-target="letter-filled">checkout</button>
+        </div>
+
+        <div id="letter-filled" class="modal">
+                <div class="modal-content">
+                        <h4>Leave Letter</h4><br />
+                        <div class="letterCopy">
+                        </div>
+                </div>
+        </div>
+
+        <div class="row center">
+                <button class="btn green darken-2 z-depth-0" onclick="approval();">Approve and Forward</button>
+                <button class="btn red darken-2 z-depth-0">Revert back with Mods</button>
+        </div>
+
+        <div class = "bottom center">
+                <button href="#" class="center btn red darken-2 text-darken-1" id="logout">Logout</button>
+        </div>
+
+
+        <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-database.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#config-web-app -->
+
+        <script>
+                // Your web app's Firebase configuration
+                var firebaseConfig = {
+                        apiKey: "AIzaSyCa3CQLhZJnqoBPGPaoT8lPV5o4aavy3Lg",
+                        authDomain: "aveli-6be64.firebaseapp.com",
+                        databaseURL: "https://aveli-6be64.firebaseio.com",
+                        projectId: "aveli-6be64",
+                        storageBucket: "aveli-6be64.appspot.com",
+                        messagingSenderId: "609957635283",
+                        appId: "1:609957635283:web:dcb661e265a9ba0f"
+                };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+                const auth = firebase.auth();
+                const db = firebase.firestore();
+                const ddb = firebase.database();
+        </script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- <script src="/scripts/sampleform.js"></script> -->
+        <script src="/js/db.js"></script>
+        <script src="/scripts/statusa.js"></script>
+        <script src="/js/ui.js"></script>
+        <script>
+                $(document).ready(function () {
+                        $('.modal').modal();
+                });
+        </script>
+</body>
+
+</html>
