@@ -44,7 +44,7 @@ nav .sidenav-trigger{
 }
 .recipe-details{
   grid-area: details;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 .recipe-delete{
   grid-area: delete;
